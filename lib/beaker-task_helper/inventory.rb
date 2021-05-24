@@ -29,7 +29,8 @@ module Beaker
             config = { 'transport' => 'winrm',
                        'winrm' => { 'ssl' => false,
                                     'user' => host[:user],
-                                    'password' => ENV['BEAKER_password'] } }
+                                    'password' => ENV['BEAKER_password'],
+                                    'connect-timeout' => 120 } }
           else
             config = { 'transport' => 'ssh',
                        'ssh' => { 'host-key-check' => false } }
